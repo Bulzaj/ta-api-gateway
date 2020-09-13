@@ -1,6 +1,22 @@
 spring:
   application:
     name: ta-api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3001"
+            allowedHeaders: "authorization"
+            allowedMethods:
+              - GET
+              - POST
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:
+        http://localhost:5000/eureka/
 
 server:
   port: 5100

@@ -11,8 +11,13 @@ public class RouteLocatorConfig {
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
         return builder.routes()
+
                 .route(p -> p.path("/api/user-details")
-                .uri(RouteConst.USER_DETAILS_SERVICE))
+                    .uri("lb://ta-current-user"))
+
+                .route(p -> p.path("/api/message-exchange")
+                    .uri("lb://ta-message-exchange"))
+
                 .build();
     }
 }
