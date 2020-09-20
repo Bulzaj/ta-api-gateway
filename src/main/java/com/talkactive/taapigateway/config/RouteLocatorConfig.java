@@ -15,7 +15,7 @@ public class RouteLocatorConfig {
                 .route(p -> p.path("/api/user-details")
                     .uri("lb://ta-current-user"))
 
-                .route(p -> p.path("/api/message-exchange")
+                .route(p -> p.path("/**")
                     .uri("lb://ta-message-exchange"))
 
                 .build();
