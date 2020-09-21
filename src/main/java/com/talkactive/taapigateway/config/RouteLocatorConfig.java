@@ -18,6 +18,9 @@ public class RouteLocatorConfig {
                 .route(p -> p.path("/**")
                     .uri("lb://ta-message-exchange"))
 
+                .route(p -> p.path("/api/conversation")
+                    .uri("lb://ta-conversation-storage"))
+
                 .build();
     }
 }
